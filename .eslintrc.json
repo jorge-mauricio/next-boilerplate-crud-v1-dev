@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Example rule: disallow `var` in favor of `let` or `const`
+    "no-var": "error"
+  }
 }
