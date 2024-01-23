@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '../styles/ItemList.module.css';
-import '../app/globals.css';
+// import '../app/globals.css';
 
 const ItemList = ({ items }) => {
   return (

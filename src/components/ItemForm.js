@@ -13,7 +13,7 @@ const ItemForm = ({ onSubmit, initialData = { name: '', description: '' } }) => 
     if (!deepCompareEquals(initialData, formData)) {
       setFormData(initialData);
     }
-  }, [initialData]);
+  }, [initialData, formData]);
 
   const handleChange = (event) => {
       setFormData({
