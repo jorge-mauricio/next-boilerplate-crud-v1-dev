@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const ItemForm = ({ onSubmit, initialData = {} }) => {
+const deepCompareEquals = (a, b) => {
+  return JSON.stringify(a) === JSON.stringify(b);
+}
+
+// const ItemForm = ({ onSubmit, initialData = {} }) => {
+const ItemForm = ({ onSubmit, initialData = { name: '', description: '' } }) => {
   const [formData, setFormData] = useState(initialData);
 
+  // Update state if initialData changes, e.g., when editing a different item
+  useEffect(() => {
+    if (!deepCompareEquals(initialData, formData)) {
+      setFormData(initialData);
+    }
+  }, [initialData]);
+
   const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+      setFormData({
+        ...formData,
+        [event.target.name]: event.target.value,
+      });
+
+    // const { name, value } = event.target;
+    // setFormData(prevFormData => ({
+    //     ...prevFormData,
+    //     [name]: value
+    // }));
   };
 
   const handleSubmit = (event) => {
