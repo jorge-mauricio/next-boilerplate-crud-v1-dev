@@ -32,8 +32,8 @@ const ItemsPage = () => {
 
   return (
     <>
-      <h1>Items</h1>
-      <ItemList items={items} />
+      <h1>Items List</h1>
+      <ItemList items={items} setItems={setItems} />
       <ItemForm onSubmit={addItem} />
     </>
   );

@@ -7,7 +7,7 @@ export default function Home() {
       <nav className="flex items-center justify-between w-full max-w-5xl mb-16">
         <Link href="/items">
             <button className="px-4 py-2 rounded-lg border border-gray-300 hover:border-gray-400 dark:border-neutral-700 dark:hover:border-neutral-600">
-              Items Item
+              Items List
             </button>
         </Link>
       </nav>
